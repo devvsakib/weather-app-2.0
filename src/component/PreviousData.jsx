@@ -3,7 +3,7 @@ import React from 'react'
 const PreviousData = ({ source, condition }) => {
     return (
         <div className='flex justify-between mt-3 items-center border-b-[1px] border-white/20 pb-2'>
-            <div>
+            {/* <div>
                 <p className='text-sm'>Today</p>
             </div>
             <div className='flex items-center gap-3'>
@@ -12,7 +12,8 @@ const PreviousData = ({ source, condition }) => {
             </div>
             <div>
                 <h3 className='text-sm'><b>23</b>/22</h3>
-            </div>
+            </div> */}
+            <h2>Coming Soon...</h2>
         </div>
     )
 }
