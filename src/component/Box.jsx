@@ -8,8 +8,8 @@ const Box = ({ titleName, detailValue }) => {
                 <img src="/assets/uv.svg" alt="" srcset="" />
             </div>
             <div>
-                <h2 className='text-md mb-2 font-semibold'>{titleName}</h2>
-                <h2 className='text-4xl font-semibold'>{detailValue}</h2>
+                <h2 className='text-sm md:text-md mb-2 font-semibold'>{titleName}</h2>
+                <h2 className='text-2xl md:text-4xl font-semibold'>{detailValue}</h2>
             </div>
         </div >
     )

@@ -81,7 +81,7 @@ function App() {
             <Box titleName={"Cloud"} detailValue={data?.current?.cloud} />
           </div>
         </div>
-        <div className='overflow-hidden bg-blue-400/10 p-5 h-[80vh]'>
+        <div className='overflow-hidden bg-blue-400/10 p-5 h-[80vh] w-[73vw] md:w-full'>
           <h2 className='mb-5 text-sm'>Previous Forcast</h2>
           <div className=' overflow-x-scroll h-[100%]'>
             <PreviousData />
