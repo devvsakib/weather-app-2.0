@@ -9,7 +9,7 @@ const Box = ({ titleName, detailValue }) => {
             </div>
             <div>
                 <h2 className='text-sm md:text-md mb-2 font-semibold'>{titleName}</h2>
-                <h2 className='text-2xl md:text-4xl font-semibold'>{detailValue}</h2>
+                <h2 className='text-2xl lg:text-4xl font-semibold'>{detailValue}</h2>
             </div>
         </div >
     )

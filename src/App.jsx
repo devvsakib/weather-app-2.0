@@ -31,7 +31,7 @@ function App() {
       document.querySelector("html").style.color = "black"
       setTheme(false)
     }
-    else{
+    else {
       document.querySelector("html").style.background = "black"
       document.querySelector("html").style.color = "white"
       setTheme(true)
@@ -41,36 +41,39 @@ function App() {
   return (
     <div className="App h-[88vh]">
       <div>
-        <button className={`absolute ${theme ? "text-black bg-white" : "text-white bg-black"} right-10 top-3`}
-          onClick={isThemeOn}
-        >{theme ? "Dark" : "Light"}</button>
       </div>
-      <div className='p-2'>
+      <div className='p-2 flex justify-between'>
         <input type="text"
-          className={`outline-none px-4 py-3 rounded-md text-white`}
+          className={`outline-none px-3 md:px-5 py-3 w-52 md:w-auto  rounded-md text-white`}
           placeholder='Search...'
           value={value}
           onChange={e => setValue(e.target.value)}
         />
+        <button className={`${theme ? "text-black bg-white" : "text-white bg-black"}`}
+          onClick={isThemeOn}
+        >{theme ? "Dark" : "Light"}</button>
       </div>
-      <div className='rounded-lg p-5 grid gap-5 grid-cols-1 md:grid-cols-3'>
+      <div className='rounded-lg md:p-5 grid gap-5 grid-cols-1 md:grid-cols-3'>
         <div className='col-span-2'>
-          <div className='flex gap-3  mb-5 p-4 rounded justify-between'>
-            <div>
-              <div className=''>
+          <div className='flex flex-col lg:flex-row mb-5 p-4 rounded justify-between'>
+              <div>
                 <h2 className='font-semibold text-3xl'>{data?.location?.name}</h2>
                 <div className='flex gap-4 mb-5 text-sm'>
                   <p>{data?.location?.country}</p>
                   <p>{data?.location?.tz_id}</p>
                 </div>
               </div>
-              <div className='flex gap-2'>
-                <h2 className='text-6xl font-bold mb-2'>{data?.current?.temp_c}C</h2>
-                <h2>{data?.current?.temp_f}F</h2>
+              <div className='flex flex-row items-center justify-between gap-5'>
+                <div>
+                  <div className='flex gap-2'>
+                    <h2 className='text-5xl md:text-6xl font-bold mb-2'>{data?.current?.temp_c}C</h2>
+                    <h2>{data?.current?.temp_f}F</h2>
+                  </div>
+                  <h2>{data?.location?.localtime}</h2>
+                </div>
+
+                <ConditionImage text={weatherCond} />
               </div>
-              <h2>{data?.location?.localtime}</h2>
-            </div>
-            <ConditionImage text={weatherCond} />
           </div>
           <div className='grid gap-4 grid-cols-2 md:grid-cols-4'>
             <Box titleName={"UV"} detailValue={data?.current?.uv} />
@@ -81,7 +84,7 @@ function App() {
             <Box titleName={"Cloud"} detailValue={data?.current?.cloud} />
           </div>
         </div>
-        <div className='overflow-hidden bg-blue-400/10 p-5 h-[80vh] w-[73vw] md:w-full'>
+        <div className='overflow-hidden bg-blue-400/20 rounded-lg p-5 h-[80vh] w-[83vw] md:w-full'>
           <h2 className='mb-5 text-sm'>Previous Forcast</h2>
           <div className=' overflow-x-scroll h-[100%]'>
             <PreviousData />
