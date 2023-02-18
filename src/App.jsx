@@ -4,6 +4,7 @@ import './App.css';
 import PreviousData from './component/PreviousData';
 import Box from './component/Box';
 import ConditionImage from './component/ConditionImage';
+import Header from './component/Header';
 
 function App() {
   const [data, setData] = useState({});
@@ -41,19 +42,13 @@ function App() {
 
   return (
     <div className="App h-[88vh]">
-      <div>
-      </div>
-      <div className='p-2 flex justify-between'>
-        <input type="text"
-          className={`outline-none px-3 md:px-5 py-2 w-52 md:w-auto  rounded-md text-white`}
-          placeholder='Search...'
-          value={value}
-          onChange={e => setValue(e.target.value)}
-        />
-        <button className={`${theme ? "text-black bg-white" : "text-white bg-black"}`}
-          onClick={isThemeOn}
-        >{theme ? "Dark" : "Light"}</button>
-      </div>
+      <Header
+      setValue={setValue}
+      value={value}
+      theme={theme}
+      setTheme={setTheme}
+      isThemeOn={isThemeOn}
+      />
       <div className='rounded-lg md:p-5 grid gap-5 grid-cols-1 md:grid-cols-3'>
         <div className='col-span-2'>
           <div className='flex flex-col lg:flex-row mb-5 p-4 rounded justify-between'>
