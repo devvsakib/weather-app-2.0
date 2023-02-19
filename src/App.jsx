@@ -5,6 +5,7 @@ import PreviousData from './component/PreviousData';
 import Box from './component/Box';
 import ConditionImage from './component/ConditionImage';
 import Header from './component/Header';
+import BGShape from './component/BGShape';
 
 function App() {
   const [data, setData] = useState({});
@@ -41,13 +42,13 @@ function App() {
   }
 
   return (
-    <div className="App h-[88vh]">
+    <div className="App h-[88vh] relative">
       <Header
-      setValue={setValue}
-      value={value}
-      theme={theme}
-      setTheme={setTheme}
-      isThemeOn={isThemeOn}
+        setValue={setValue}
+        value={value}
+        theme={theme}
+        setTheme={setTheme}
+        isThemeOn={isThemeOn}
       />
       <div className='rounded-lg md:p-5 grid gap-5 grid-cols-1 md:grid-cols-3'>
         <div className='col-span-2'>
@@ -82,13 +83,14 @@ function App() {
         </div>
         <div className='overflow-hidden bg-blue-400/20 rounded-lg p-5 h-[80vh] w-[83vw] md:w-full'>
           <h2 className=' text-sm'>Previous Forcast</h2>
-          <div className='overflow-x-scroll h-[100%] flex flex-col justify-between'>
+          <div className='overflow-x-scroll h-[100%] flex flex-col justify-between overflow-hidden hover:overflow-scroll'>
             <PreviousData
               forecast={forecast}
             />
           </div>
         </div>
       </div>
+      <BGShape />
     </div>
   )
 }

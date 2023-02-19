@@ -2,7 +2,7 @@ import React from 'react'
 
 const Box = ({ titleName, detailValue }) => {
     return (
-        <div className='bg-[#7eb4bb]/20 p-4 rounded-lg'>
+        <div className='bg-[#7eb4bb]/20 backdrop-blur-[5px] z-10 p-4 rounded-lg'>
             <div>
                 {/* Will add icon later */}
                 <img src="/assets/uv.svg" alt="" srcset="" />
